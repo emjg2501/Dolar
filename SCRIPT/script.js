@@ -5,7 +5,6 @@ const ves = document.querySelector(".ves")
 const update = document.querySelector(".update_info")
 const exch = document.getElementById("drop_opts")
 
-
 exch.addEventListener('change', (event) => {
     console.log(event.target.value)
     var chachi = event.target.value
@@ -34,6 +33,8 @@ exch.addEventListener('change', (event) => {
     xhr.open("GET", `${API_URL}`)
     xhr.send()
 })
+
+//HOLA
 
 
 
