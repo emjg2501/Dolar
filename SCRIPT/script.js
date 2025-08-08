@@ -25,6 +25,7 @@ function whenLoad() {
 window.onload = whenLoad
 
 exch.addEventListener('change', (event) => {
+    console.clear()
     console.log(event.target.value)
     var chachi = event.target.value
 
