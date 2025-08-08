@@ -5,6 +5,25 @@ const ves = document.querySelector(".ves")
 const update = document.querySelector(".update_info")
 const exch = document.getElementById("drop_opts")
 
+function whenLoad() {
+    fetch(API_URL).then(response => {
+        if(!response.ok) {
+            console.log("ERROR")
+            ves.innerHTML = "ERROR"
+            update.innerHTML = "ERROR"
+        }
+        return response.json().then(data => {
+            console.log(data)
+            tasa = data.monitors.bcv.price
+            act = data.monitors.bcv.last_update
+            ves.innerHTML = tasa
+            update.innerHTML = act
+        })
+    })
+}
+
+window.onload = whenLoad
+
 exch.addEventListener('change', (event) => {
     console.log(event.target.value)
     var chachi = event.target.value
