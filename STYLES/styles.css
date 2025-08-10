@@ -34,7 +34,29 @@ body {
   justify-content: space-between;
   height: 50%;
 }
-.content .exchange .usd_cont .usd, .content .exchange .usd_cont .ves, .content .exchange .ves_cont .usd, .content .exchange .ves_cont .ves {
+.content .exchange .usd_cont .usd, .content .exchange .ves_cont .usd {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  color: #ffffff;
+  width: 100%;
+  border: none;
+  background: none;
+  caret-color: #ffffff;
+}
+.content .exchange .usd_cont .usd::-moz-placeholder, .content .exchange .ves_cont .usd::-moz-placeholder {
+  color: #ffffff;
+}
+.content .exchange .usd_cont .usd::placeholder, .content .exchange .ves_cont .usd::placeholder {
+  color: #ffffff;
+}
+.content .exchange .usd_cont .usd::-webkit-inner-spin-button, .content .exchange .usd_cont .usd::-webkit-outer-spin-button, .content .exchange .ves_cont .usd::-webkit-inner-spin-button, .content .exchange .ves_cont .usd::-webkit-outer-spin-button {
+  display: none;
+}
+.content .exchange .usd_cont .usd:focus, .content .exchange .ves_cont .usd:focus {
+  border: none;
+  outline: none;
+}
+.content .exchange .usd_cont .ves, .content .exchange .ves_cont .ves {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   color: #ffffff;

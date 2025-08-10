@@ -4,8 +4,11 @@ const xhr = new XMLHttpRequest()
 const ves = document.querySelector(".ves")
 const update = document.querySelector(".update_info")
 const exch = document.getElementById("drop_opts")
+let dolarAmmount = document.querySelector(".usd")
 
 function whenLoad() {
+    ves.innerHTML = "1.00"
+
     fetch(API_URL).then(response => {
         if(!response.ok) {
             console.log("ERROR")
@@ -28,6 +31,7 @@ exch.addEventListener('change', (event) => {
     console.clear()
     console.log(event.target.value)
     var chachi = event.target.value
+    const dolarInput = parseFloat(dolarAmmount.value) || 0
 
     function onRequestHandler() {
         if(this.readyState == 4 && this.status == 200) {
@@ -37,12 +41,12 @@ exch.addEventListener('change', (event) => {
             if(chachi == "bcv") {
                 const current_price = data.monitors.bcv.price
                 const last_update = data.monitors.bcv.last_update
-                ves.innerHTML = current_price
+                ves.innerHTML = (current_price * dolarInput).toFixed(2)
                 update.innerHTML = "Actualizado " + last_update
             } else if(chachi == "paralelo") {
                 const current_price = data.monitors.enparalelovzla.price_old
                 const last_update = data.monitors.enparalelovzla.last_update
-                ves.innerHTML = current_price
+                ves.innerHTML = (current_price * dolarInput).toFixed(2)
                 update.innerHTML = "Actualizado " + last_update            
             } else {
                 console.log("ERROR")
@@ -53,6 +57,13 @@ exch.addEventListener('change', (event) => {
     xhr.open("GET", `${API_URL}`)
     xhr.send()
 })
+
+function updateExchange() {
+    const dolarInput = parseFloat(dolarAmmount.value) || 0
+    ves.innerHTML = (dolarInput * tasa).toFixed(2)
+}
+
+dolarAmmount.addEventListener('input', updateExchange)
 
 //HOLA
 
