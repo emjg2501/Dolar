@@ -1,13 +1,14 @@
-const API_URL = "https://pydolarve.org/api/v1/dollar?page=alcambio"
-const xhr = new XMLHttpRequest()
+const API_URL = "https://pydolarve.org/api/v2/tipo-cambio"
 
 const ves = document.querySelector(".ves")
 const update = document.querySelector(".update_info")
-const exch = document.getElementById("drop_opts")
-let dolarAmmount = document.querySelector(".usd")
+const drop = document.getElementById("drop_opts")
+const currSymbol = document.querySelector(".curr_sym")
+
+let currAmmount = document.querySelector(".curr")
 
 function whenLoad() {
-    ves.innerHTML = "1.00"
+    currAmmount.placeholder = "1.00"
 
     fetch(API_URL).then(response => {
         if(!response.ok) {
@@ -17,8 +18,8 @@ function whenLoad() {
         }
         return response.json().then(data => {
             console.log(data)
-            tasa = data.monitors.bcv.price
-            act = data.monitors.bcv.last_update
+            tasa = data.monitors.usd.price
+            act = data.monitors.usd.last_update
             ves.innerHTML = tasa
             update.innerHTML = act
         })
@@ -27,45 +28,108 @@ function whenLoad() {
 
 window.onload = whenLoad
 
-exch.addEventListener('change', (event) => {
-    console.clear()
-    console.log(event.target.value)
-    var chachi = event.target.value
-    const dolarInput = parseFloat(dolarAmmount.value) || 0
 
-    function onRequestHandler() {
-        if(this.readyState == 4 && this.status == 200) {
-        const data = JSON.parse(this.response)
-        console.log(data)
-        
-            if(chachi == "bcv") {
-                const current_price = data.monitors.bcv.price
-                const last_update = data.monitors.bcv.last_update
-                ves.innerHTML = (current_price * dolarInput).toFixed(2)
-                update.innerHTML = "Actualizado " + last_update
-            } else if(chachi == "paralelo") {
-                const current_price = data.monitors.enparalelovzla.price_old
-                const last_update = data.monitors.enparalelovzla.last_update
-                ves.innerHTML = (current_price * dolarInput).toFixed(2)
-                update.innerHTML = "Actualizado " + last_update            
-            } else {
-                console.log("ERROR")
+drop.addEventListener('change', (event) => {
+    dropOpt = event.target.value
+    currInput = parseFloat(currAmmount.value) || 0
+
+    fetch(API_URL).then(response => {
+        return response.json().then(data => {
+            console.clear()
+            console.log(data)
+
+            switch(dropOpt) {
+            case "usd":
+                currSymbol.innerHTML = "$"
+                currentPrice = data.monitors.usd.price
+                lastUpdate = data.monitors.usd.last_update
+                ves.innerHTML = currentPrice.toFixed(2)
+                update.innerHTML = lastUpdate
+                tasa = currentPrice
+                break
+            case "eur":
+                currSymbol.innerHTML = "€"
+                currentPrice = data.monitors.eur.price
+                lastUpdate = data.monitors.eur.last_update
+                ves.innerHTML = currentPrice.toFixed(2)
+                update.innerHTML = lastUpdate
+                tasa = currentPrice
+                break
+            case "cny":
+                currSymbol.innerHTML = "¥"
+                currentPrice = data.monitors.cny.price
+                lastUpdate = data.monitors.cny.last_update
+                ves.innerHTML = currentPrice.toFixed(2)
+                update.innerHTML = lastUpdate
+                tasa = currentPrice                
+                break
+            default:
+                console.clear()
+                currSymbol.innerHTML = "$"
+                currentPrice = data.monitors.usd.price
+                lastUpdate = data.monitors.usd.last_update
+                ves.innerHTML = (currentPrice * currInput).toFixed(2)
+                tasa = currentPrice
+                update.innerHTML = lastUpdate                
             }
-        }    
-    }    
-    xhr.addEventListener('load', onRequestHandler)
-    xhr.open("GET", `${API_URL}`)
-    xhr.send()
+        })
+    })
+})
+//drop.addEventListener('change', changeCurrency)
+
+/*
+exch.addEventListener('change', event() => {
+    console.clear()
+    let dropOpt = event.target.value
+    let currInput = parseFloat(currAmmount.value) || 0
+
+    fetch(API_URL).then(response => {
+        if(!response.ok) {
+            console.log("ERROR")
+        }
+        return response.json().then(data => {
+            console.log(data)
+
+            switch(dropOpt) {
+            case "usd":
+                currSymbol.innerHTML = "$"
+                currentPrice = data.monitors.usd.price
+                lastUpdate = data.monitors.usd.last_update
+                ves.innerHTML = (currentPrice * currInput).toFixed(2)
+                update.innerHTML = lastUpdate
+                break
+            case "eur":
+                currSymbol.innerHTML = "€"
+                currentPrice = data.monitors.eur.price
+                lastUpdate = data.monitors.eur.last_update
+                ves.innerHTML = (currentPrice * currInput).toFixed(2)
+                update.innerHTML = lastUpdate
+                break
+            case "cny":
+                currSymbol.innerHTML = "¥"
+                currentPrice = data.monitors.cny.price
+                lastUpdate = data.monitors.cny.last_update
+                ves.innerHTML = (currentPrice * currInput).toFixed(2)
+                update.innerHTML = lastUpdate                
+                break
+            default:
+                currSymbol.innerHTML = "$"
+                currentPrice = data.monitors.usd.price
+                lastUpdate = data.monitors.usd.last_update
+                ves.innerHTML = (currentPrice * currInput).toFixed(2)
+                update.innerHTML = lastUpdate                
+            }
+        })
+    })
 })
 
+*/
+
+//Actualizar el cambio en tiempo real mientras el usuario escribe
+
 function updateExchange() {
-    const dolarInput = parseFloat(dolarAmmount.value) || 0
-    ves.innerHTML = (dolarInput * tasa).toFixed(2)
+    let currInput = parseFloat(currAmmount.value) || 1
+    ves.innerHTML = (currInput * tasa).toFixed(2)
 }
 
-dolarAmmount.addEventListener('input', updateExchange)
-
-//HOLA
-
-
-
+currAmmount.addEventListener('input', updateExchange)

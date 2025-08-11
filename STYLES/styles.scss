@@ -8,12 +8,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
     background: #3484a3;
     background: linear-gradient(180deg, rgba(52, 132, 163, 1) 0%, rgba(71, 150, 104, 1) 50%, rgba(150, 141, 60, 1) 100%);
 }
 
+.footer {
+    margin-top: auto;
+    padding-right: 25px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    .copyright {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: #ffffff; 
+    }
+}
+
 .content {
+    margin-top: auto;
     height: 400px;
     width: 500px;
     padding: 20px 50px 20px 50px;
@@ -28,13 +46,13 @@ body {
         height: 80%;
         width: 100%;
 
-        .usd_cont, .ves_cont {
+        .curr_cont, .ves_cont {
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 50%;
             
-            .usd {
+            .curr {
                 font-family: "Poppins", sans-serif;
                 font-size: 50px;
                 color: #ffffff;      
@@ -64,7 +82,7 @@ body {
                 color: #ffffff;
             }
 
-            .usd_sym, .ves_sym {
+            .curr_sym, .ves_sym {
                 font-family: "Poppins", sans-serif;
                 font-size: 30px;
                 color: #ffffff;

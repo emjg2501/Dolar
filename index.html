@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precio del dólar</title>
+    <title>Divisas</title>
+    <link rel="icon" type="image/x-icon" href="ASSETS/Favicon 2.png">
     <link rel="stylesheet" href="STYLES/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +13,31 @@
 <body>
     <div class="content">
         <div class="exchange">
-            <div class="usd_cont">
-                <input type="number" class="usd" placeholder="1.00">
-                <p class="usd_sym">US$</p>
+            <div class="curr_cont">
+                <input type="number" class="curr" placeholder="">
+                <p class="curr_sym">$</p>
             </div>
             <div class="ves_cont">
-                <p class="ves">---.---</p>
+                <p class="ves"></p>
                 <p class="ves_sym">Bs.S</p>
             </div>
         </div>
         <div class="update_cont">
             <p class="update_info">
-                Actualizado ------
+                ------
             </p>
             <div class="dropdown">
                 <select name="drop" class="drop_opts" id="drop_opts">
-                    <option value="bcv">BCV</option>
-                    <option value="paralelo">Paralelo</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="cny">CNY</option>
                 </select>
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <p class="copyright">Copyright © 2025. All rights reserved</p>
+    </footer>
 
     <script src="SCRIPT/script.js"></script>
 </body>
