@@ -14,6 +14,41 @@ body {
     background: linear-gradient(180deg, rgba(52, 132, 163, 1) 0%, rgba(71, 150, 104, 1) 50%, rgba(150, 141, 60, 1) 100%);
 }
 
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px 0 100px;
+
+    .title {
+        width: 260px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: auto;
+        cursor: pointer;
+
+        .dolar_logo {
+            height: 50px;
+            width: 50px;
+        }
+
+        h1 {
+            font-family: "Arial";
+            font-size: 30px;
+            color: #ffffff;
+        }
+    }
+
+    .github-logo {
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+}
+
 .footer {
     margin-top: auto;
     padding-right: 25px;
@@ -46,7 +81,7 @@ body {
         height: 80%;
         width: 100%;
 
-        .curr_cont, .ves_cont {
+        .curr_cont, .ved_cont {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -73,16 +108,20 @@ body {
                 &:focus {
                     border: none;
                     outline: none;
+
+                    &::placeholder {
+                        color: #cecece;
+                    }
                 }
             }
 
-            .ves {
+            .ved {
                 font-family: "Poppins", sans-serif;
                 font-size: 50px;
                 color: #ffffff;
             }
 
-            .curr_sym, .ves_sym {
+            .curr_sym, .ved_sym {
                 font-family: "Poppins", sans-serif;
                 font-size: 30px;
                 color: #ffffff;
@@ -118,9 +157,44 @@ body {
                 transition: background-color 0.2s ease-in-out;
                 
                 &:hover {
-                    background: rgba(190, 190, 190, 0.2);
+                    background: #bebebe33;
+                }
+
+                option {
+                    color: #353535;
                 }
             }
         }
     }
+}
+
+@media only screen and (width: 430px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background: #3484a3;
+    background: linear-gradient(180deg, rgba(52, 132, 163, 1) 0%, rgba(71, 150, 104, 1) 50%, rgba(150, 141, 60, 1) 100%);
+  }
+
+  .content {
+    margin-top: none;
+    width: 350px;
+    height: 450px;
+
+    .update_cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .update_info {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+  .footer {
+    display: none;
+  }
 }

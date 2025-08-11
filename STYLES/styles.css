@@ -14,6 +14,37 @@ body {
   background: linear-gradient(180deg, rgb(52, 132, 163) 0%, rgb(71, 150, 104) 50%, rgb(150, 141, 60) 100%);
 }
 
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px 0 100px;
+}
+.header .title {
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: auto;
+  cursor: pointer;
+}
+.header .title .dolar_logo {
+  height: 50px;
+  width: 50px;
+}
+.header .title h1 {
+  font-family: "Arial";
+  font-size: 30px;
+  color: #ffffff;
+}
+.header .github-logo {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
 .footer {
   margin-top: auto;
   padding-right: 25px;
@@ -45,13 +76,13 @@ body {
   height: 80%;
   width: 100%;
 }
-.content .exchange .curr_cont, .content .exchange .ves_cont {
+.content .exchange .curr_cont, .content .exchange .ved_cont {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50%;
 }
-.content .exchange .curr_cont .curr, .content .exchange .ves_cont .curr {
+.content .exchange .curr_cont .curr, .content .exchange .ved_cont .curr {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   color: #ffffff;
@@ -60,25 +91,31 @@ body {
   background: none;
   caret-color: #ffffff;
 }
-.content .exchange .curr_cont .curr::-moz-placeholder, .content .exchange .ves_cont .curr::-moz-placeholder {
+.content .exchange .curr_cont .curr::-moz-placeholder, .content .exchange .ved_cont .curr::-moz-placeholder {
   color: #ffffff;
 }
-.content .exchange .curr_cont .curr::placeholder, .content .exchange .ves_cont .curr::placeholder {
+.content .exchange .curr_cont .curr::placeholder, .content .exchange .ved_cont .curr::placeholder {
   color: #ffffff;
 }
-.content .exchange .curr_cont .curr::-webkit-inner-spin-button, .content .exchange .curr_cont .curr::-webkit-outer-spin-button, .content .exchange .ves_cont .curr::-webkit-inner-spin-button, .content .exchange .ves_cont .curr::-webkit-outer-spin-button {
+.content .exchange .curr_cont .curr::-webkit-inner-spin-button, .content .exchange .curr_cont .curr::-webkit-outer-spin-button, .content .exchange .ved_cont .curr::-webkit-inner-spin-button, .content .exchange .ved_cont .curr::-webkit-outer-spin-button {
   display: none;
 }
-.content .exchange .curr_cont .curr:focus, .content .exchange .ves_cont .curr:focus {
+.content .exchange .curr_cont .curr:focus, .content .exchange .ved_cont .curr:focus {
   border: none;
   outline: none;
 }
-.content .exchange .curr_cont .ves, .content .exchange .ves_cont .ves {
+.content .exchange .curr_cont .curr:focus::-moz-placeholder, .content .exchange .ved_cont .curr:focus::-moz-placeholder {
+  color: #cecece;
+}
+.content .exchange .curr_cont .curr:focus::placeholder, .content .exchange .ved_cont .curr:focus::placeholder {
+  color: #cecece;
+}
+.content .exchange .curr_cont .ved, .content .exchange .ved_cont .ved {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   color: #ffffff;
 }
-.content .exchange .curr_cont .curr_sym, .content .exchange .curr_cont .ves_sym, .content .exchange .ves_cont .curr_sym, .content .exchange .ves_cont .ves_sym {
+.content .exchange .curr_cont .curr_sym, .content .exchange .curr_cont .ved_sym, .content .exchange .ved_cont .curr_sym, .content .exchange .ved_cont .ved_sym {
   font-family: "Poppins", sans-serif;
   font-size: 30px;
   color: #ffffff;
@@ -115,4 +152,34 @@ body {
 }
 .content .update_cont .dropdown .drop_opts:hover {
   background: rgba(190, 190, 190, 0.2);
+}
+.content .update_cont .dropdown .drop_opts option {
+  color: #353535;
+}
+
+@media only screen and (width: 430px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background: #3484a3;
+    background: linear-gradient(180deg, rgb(52, 132, 163) 0%, rgb(71, 150, 104) 50%, rgb(150, 141, 60) 100%);
+  }
+  .content {
+    margin-top: none;
+    width: 350px;
+    height: 450px;
+  }
+  .content .update_cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content .update_cont .update_info {
+    margin-bottom: 30px;
+  }
+  .footer {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */
