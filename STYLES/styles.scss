@@ -1,7 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,20 +10,22 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background: #3484a3;
-    background: linear-gradient(180deg, rgba(52, 132, 163, 1) 0%, rgba(71, 150, 104, 1) 50%, rgba(150, 141, 60, 1) 100%);
+    background: #7be305;
+    background: linear-gradient(180deg, rgba(123, 227, 5, 1) 0%, rgba(114, 213, 0, 1) 46%, rgba(98, 184, 0, 1) 80%, rgba(91, 171, 0, 1) 100%);
 }
 
 .header {
     height: 70px;
     width: 100%;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 100px 0 100px;
+    padding: 20px 100px 20px 100px;
+    box-shadow: 0 4px 30px #0000001a;
 
     .title {
-        width: 260px;
+        width: 180px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -31,20 +33,20 @@ body {
         cursor: pointer;
 
         .dolar_logo {
-            height: 50px;
-            width: 50px;
+            height: 45px;
+            width: 45px;
         }
 
         h1 {
-            font-family: "Arial";
+            font-family: "Poppins", sans-serif;
             font-size: 30px;
-            color: #ffffff;
+            color: #353535;
         }
     }
 
     .github-logo {
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
         cursor: pointer;
     }
 }
@@ -61,7 +63,7 @@ body {
     .copyright {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
-        color: #ffffff; 
+        color: #ffffff;
     }
 }
 
@@ -70,27 +72,28 @@ body {
     height: 400px;
     width: 500px;
     padding: 20px 50px 20px 50px;
-    background: rgba(190, 190, 190, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: #bebebe33;
+    box-shadow: 0 4px 30px #0000001a;
     backdrop-filter: blur(7.3px);
     -webkit-backdrop-filter: blur(7.3px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid #ffffff80;
     border-radius: 25px;
 
     .exchange {
         height: 80%;
         width: 100%;
 
-        .curr_cont, .ved_cont {
+        .curr_cont,
+        .ved_cont {
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 50%;
-            
+
             .curr {
                 font-family: "Poppins", sans-serif;
                 font-size: 50px;
-                color: #ffffff;      
+                color: #ffffff;
                 width: 100%;
                 border: none;
                 background: none;
@@ -104,7 +107,7 @@ body {
                 &::-webkit-outer-spin-button {
                     display: none;
                 }
-                
+
                 &:focus {
                     border: none;
                     outline: none;
@@ -121,7 +124,8 @@ body {
                 color: #ffffff;
             }
 
-            .curr_sym, .ved_sym {
+            .curr_sym,
+            .ved_sym {
                 font-family: "Poppins", sans-serif;
                 font-size: 30px;
                 color: #ffffff;
@@ -149,13 +153,13 @@ body {
             .drop_opts {
                 background: none;
                 padding: 8px;
-                border: 1px solid rgba(255, 255, 255, 0.5);
+                border: 1px solid #ffffff80;
                 border-radius: 25px;
                 font-family: Arial, Helvetica, sans-serif;
                 color: #ffffff;
                 width: 75px;
                 transition: background-color 0.2s ease-in-out;
-                
+
                 &:hover {
                     background: #bebebe33;
                 }
@@ -169,32 +173,31 @@ body {
 }
 
 @media only screen and (width: 430px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    background: #3484a3;
-    background: linear-gradient(180deg, rgba(52, 132, 163, 1) 0%, rgba(71, 150, 104, 1) 50%, rgba(150, 141, 60, 1) 100%);
-  }
-
-  .content {
-    margin-top: none;
-    width: 350px;
-    height: 450px;
-
-    .update_cont {
+    body {
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+        background: #3484a3;
+    }
 
-        .update_info {
-            margin-bottom: 30px;
+    .content {
+        margin-top: none;
+        width: 350px;
+        height: 450px;
+
+        .update_cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .update_info {
+                margin-bottom: 30px;
+            }
         }
     }
-}
 
-  .footer {
-    display: none;
-  }
+    .footer {
+        display: none;
+    }
 }

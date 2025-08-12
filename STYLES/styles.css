@@ -10,20 +10,22 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background: #3484a3;
-  background: linear-gradient(180deg, rgb(52, 132, 163) 0%, rgb(71, 150, 104) 50%, rgb(150, 141, 60) 100%);
+  background: #7be305;
+  background: linear-gradient(180deg, rgb(123, 227, 5) 0%, rgb(114, 213, 0) 46%, rgb(98, 184, 0) 80%, rgb(91, 171, 0) 100%);
 }
 
 .header {
   height: 70px;
   width: 100%;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 100px 0 100px;
+  padding: 20px 100px 20px 100px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1019607843);
 }
 .header .title {
-  width: 260px;
+  width: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,17 +33,17 @@ body {
   cursor: pointer;
 }
 .header .title .dolar_logo {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
 }
 .header .title h1 {
-  font-family: "Arial";
+  font-family: "Poppins", sans-serif;
   font-size: 30px;
-  color: #ffffff;
+  color: #353535;
 }
 .header .github-logo {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
 }
 
@@ -66,23 +68,25 @@ body {
   width: 500px;
   padding: 20px 50px 20px 50px;
   background: rgba(190, 190, 190, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1019607843);
   backdrop-filter: blur(7.3px);
   -webkit-backdrop-filter: blur(7.3px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5019607843);
   border-radius: 25px;
 }
 .content .exchange {
   height: 80%;
   width: 100%;
 }
-.content .exchange .curr_cont, .content .exchange .ved_cont {
+.content .exchange .curr_cont,
+.content .exchange .ved_cont {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50%;
 }
-.content .exchange .curr_cont .curr, .content .exchange .ved_cont .curr {
+.content .exchange .curr_cont .curr,
+.content .exchange .ved_cont .curr {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   color: #ffffff;
@@ -94,28 +98,37 @@ body {
 .content .exchange .curr_cont .curr::-moz-placeholder, .content .exchange .ved_cont .curr::-moz-placeholder {
   color: #ffffff;
 }
-.content .exchange .curr_cont .curr::placeholder, .content .exchange .ved_cont .curr::placeholder {
+.content .exchange .curr_cont .curr::placeholder,
+.content .exchange .ved_cont .curr::placeholder {
   color: #ffffff;
 }
-.content .exchange .curr_cont .curr::-webkit-inner-spin-button, .content .exchange .curr_cont .curr::-webkit-outer-spin-button, .content .exchange .ved_cont .curr::-webkit-inner-spin-button, .content .exchange .ved_cont .curr::-webkit-outer-spin-button {
+.content .exchange .curr_cont .curr::-webkit-inner-spin-button, .content .exchange .curr_cont .curr::-webkit-outer-spin-button,
+.content .exchange .ved_cont .curr::-webkit-inner-spin-button,
+.content .exchange .ved_cont .curr::-webkit-outer-spin-button {
   display: none;
 }
-.content .exchange .curr_cont .curr:focus, .content .exchange .ved_cont .curr:focus {
+.content .exchange .curr_cont .curr:focus,
+.content .exchange .ved_cont .curr:focus {
   border: none;
   outline: none;
 }
 .content .exchange .curr_cont .curr:focus::-moz-placeholder, .content .exchange .ved_cont .curr:focus::-moz-placeholder {
   color: #cecece;
 }
-.content .exchange .curr_cont .curr:focus::placeholder, .content .exchange .ved_cont .curr:focus::placeholder {
+.content .exchange .curr_cont .curr:focus::placeholder,
+.content .exchange .ved_cont .curr:focus::placeholder {
   color: #cecece;
 }
-.content .exchange .curr_cont .ved, .content .exchange .ved_cont .ved {
+.content .exchange .curr_cont .ved,
+.content .exchange .ved_cont .ved {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   color: #ffffff;
 }
-.content .exchange .curr_cont .curr_sym, .content .exchange .curr_cont .ved_sym, .content .exchange .ved_cont .curr_sym, .content .exchange .ved_cont .ved_sym {
+.content .exchange .curr_cont .curr_sym,
+.content .exchange .curr_cont .ved_sym,
+.content .exchange .ved_cont .curr_sym,
+.content .exchange .ved_cont .ved_sym {
   font-family: "Poppins", sans-serif;
   font-size: 30px;
   color: #ffffff;
@@ -143,7 +156,7 @@ body {
 .content .update_cont .dropdown .drop_opts {
   background: none;
   padding: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5019607843);
   border-radius: 25px;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
@@ -164,7 +177,6 @@ body {
     align-items: center;
     min-height: 60vh;
     background: #3484a3;
-    background: linear-gradient(180deg, rgb(52, 132, 163) 0%, rgb(71, 150, 104) 50%, rgb(150, 141, 60) 100%);
   }
   .content {
     margin-top: none;
